@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        tools:text="@string/email"
+        android:textColor="@color/default_white"
+        android:textSize="@dimen/text_size_title_medium" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_field_height"
+        android:layout_marginTop="@dimen/auth_email_text_field_margin_top"
+        android:background="@drawable/background_auth_input"
+        tools:hint="@string/hint_example_email"
+        android:paddingHorizontal="@dimen/text_field_padding_horizontal"
+        android:textColorHint="@color/text_color_hint"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="@dimen/text_size_body_medium"
+        android:textColor="@color/default_white"/>
+
+</LinearLayout>

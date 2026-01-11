@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Courses" parent="Base.Theme.Courses">
+        <!--<item name="android:forceDarkAllowed">false</item>-->
+    </style>
+</resources>

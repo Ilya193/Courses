@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/courses_background_item_course"
+    android:paddingBottom="@dimen/courses_item_course_padding_bottom">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/courses_item_course_corner_size"
+        app:cardElevation="0dp"
+        app:layout_constraintDimensionRatio="2.87:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_courses_image" />
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/background_is_favorite"
+        android:layout_width="@dimen/courses_background_is_favorite_size"
+        android:layout_height="@dimen/courses_background_is_favorite_size"
+        android:layout_marginTop="@dimen/courses_item_action_information_margin"
+        android:layout_marginEnd="@dimen/courses_item_action_information_margin"
+        android:background="@drawable/courses_background_item_course_favorite"
+        app:layout_constraintEnd_toEndOf="@id/container_image"
+        app:layout_constraintTop_toTopOf="@id/container_image" />
+
+    <ImageView
+        android:layout_width="@dimen/courses_icon_is_favorite_size"
+        android:layout_height="@dimen/courses_icon_is_favorite_size"
+        android:src="@drawable/icon_favorites"
+        app:layout_constraintBottom_toBottomOf="@id/background_is_favorite"
+        app:layout_constraintEnd_toEndOf="@id/background_is_favorite"
+        app:layout_constraintStart_toStartOf="@id/background_is_favorite"
+        app:layout_constraintTop_toTopOf="@id/background_is_favorite" />
+
+    <LinearLayout
+        android:id="@+id/container_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/courses_item_action_information_margin"
+        android:background="@drawable/courses_background_item_course_rate"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/courses_item_course_action_information_padding_horizontal"
+        android:paddingVertical="@dimen/courses_item_course_action_information_padding_vertical"
+        app:layout_constraintBottom_toBottomOf="@id/container_image"
+        app:layout_constraintStart_toStartOf="@id/container_image">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_rate"
+            android:layout_width="@dimen/icon_size_caption"
+            android:layout_height="@dimen/icon_size_caption"
+            android:src="@drawable/icon_star_fill"
+            app:tint="@color/green" />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/courses_item_course_action_rate_margin_start"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/default_white"
+            android:textSize="@dimen/icon_size_caption"
+            tools:text="4.9" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/course_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/courses_item_date_information_margin_start"
+        android:background="@drawable/courses_background_item_course_date"
+        android:fontFamily="@font/roboto_regular"
+        android:paddingHorizontal="@dimen/courses_item_course_action_information_padding_horizontal"
+        android:paddingVertical="@dimen/courses_item_course_action_information_padding_vertical"
+        android:textColor="@color/default_white"
+        android:textSize="@dimen/text_size_body_caption"
+        app:layout_constraintBottom_toBottomOf="@id/container_rate"
+        app:layout_constraintStart_toEndOf="@id/container_rate"
+        app:layout_constraintTop_toTopOf="@id/container_rate"
+        tools:text="22 Мая 2024" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guideline" />
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/courses_item_course_name_margin_top"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_white"
+        android:textSize="@dimen/text_size_title_medium"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/container_image"
+        tools:text="Java-разработчик с нуля" />
+
+    <TextView
+        android:id="@+id/course_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/courses_item_course_description_margin_top"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="2"
+        android:textColor="@color/default_white_70"
+        android:textSize="@dimen/text_size_body_small"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/course_name"
+        tools:text="Освойте backend-разработку  и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании." />
+
+    <TextView
+        android:id="@+id/course_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/courses_item_course_price_margin_top"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_white"
+        android:textSize="@dimen/text_size_title_medium"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/course_description"
+        tools:text="999 ₽" />
+
+    <LinearLayout
+        android:id="@+id/container_more_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/course_price"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintTop_toTopOf="@id/course_price">
+
+        <TextView
+            android:id="@+id/more_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/courses_item_course_more_details_margin_end"
+            android:fontFamily="@font/roboto_semibold"
+            android:text="@string/more_details"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size_body_small" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/icon_size_small"
+            android:layout_height="@dimen/icon_size_small"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_arrow_right_short_fill"
+            app:tint="@color/green" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

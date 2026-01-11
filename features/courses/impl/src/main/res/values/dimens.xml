@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="courses_search_courses_margin_top">12dp</dimen>
+    <dimen name="courses_search_courses_margin_end">4dp</dimen>
+    <dimen name="courses_background_search_courses_corner_size">40dp</dimen>
+    <dimen name="courses_icon_filter_size">24dp</dimen>
+    <dimen name="courses_container_sorted_margin_top">12dp</dimen>
+    <dimen name="courses_sorted_by_margin_end">4dp</dimen>
+    <dimen name="courses_list_of_courses_margin_top">12dp</dimen>
+
+    <dimen name="courses_item_course_corner_size">16dp</dimen>
+    <dimen name="courses_item_course_padding_bottom">8dp</dimen>
+    <dimen name="courses_item_course_name_margin_top">8dp</dimen>
+    <dimen name="courses_item_course_description_margin_top">6dp</dimen>
+    <dimen name="courses_item_course_price_margin_top">8dp</dimen>
+    <dimen name="courses_item_course_more_details_margin_top">8dp</dimen>
+    <dimen name="courses_item_course_more_details_margin_end">4dp</dimen>
+    <dimen name="courses_items_space">14dp</dimen>
+
+    <dimen name="courses_background_is_favorite_size">24dp</dimen>
+    <dimen name="courses_item_action_information_margin">8dp</dimen>
+    <dimen name="courses_icon_is_favorite_size">12dp</dimen>
+    <dimen name="courses_item_course_action_information_corner_size">16dp</dimen>
+    <dimen name="courses_item_date_information_margin_start">4dp</dimen>
+    <dimen name="courses_item_course_action_information_padding_horizontal">6dp</dimen>
+    <dimen name="courses_item_course_action_information_padding_vertical">3dp</dimen>
+    <dimen name="courses_item_course_action_rate_margin_start">2dp</dimen>
+
+</resources>

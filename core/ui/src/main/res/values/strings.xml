@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_login">Вход</string>
+    <string name="email">Email</string>
+    <string name="hint_example_email">example@gmail.com</string>
+    <string name="password">Пароль</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="forgot_password">Забыл пароль</string>
+    <string name="no_account">Нет аккаунта?</string>
+    <string name="registration">Регистрация</string>
+
+    <string name="vk_link">https://vk.com/</string>
+    <string name="ok_link">https://ok.ru/</string>
+
+    <string name="main_screen">Главная</string>
+    <string name="favorites_screen">Избранное</string>
+    <string name="account_screen">Аккаунт</string>
+
+    <string name="search_courses">Search courses…</string>
+    <string name="sorted_by_date">По дате добавления</string>
+    <string name="more_details">Подробнее</string>
+</resources>

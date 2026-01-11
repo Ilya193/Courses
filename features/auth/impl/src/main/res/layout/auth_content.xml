@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guideline" />
+
+    <LinearLayout
+        android:id="@+id/auth_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/account_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/account_login"
+            android:textColor="@color/default_white"
+            android:textSize="@dimen/text_size_headline" />
+
+        <include
+            android:id="@+id/input_email"
+            layout="@layout/auth_input_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/auth_input_margin_top" />
+
+        <include
+            android:id="@+id/input_password"
+            layout="@layout/auth_input_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/auth_input_margin_top" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_account_login_height"
+            android:layout_marginTop="@dimen/auth_account_login_margin_top"
+            android:background="@drawable/background_auth_account_login"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/account_login"
+            android:textColor="@color/default_white"
+            android:textSize="@dimen/text_size_body_medium" />
+
+        <TextView
+            android:id="@+id/no_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/auth_no_account_margin_top"
+            android:fontFamily="@font/roboto_semibold"
+            android:textSize="@dimen/text_size_body_small"
+            tools:text="нет аккаунта? регистрация"
+            tools:textColor="@color/default_white" />
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/auth_forgot_password_margin_top"
+            android:fontFamily="@font/roboto_semibold"
+            android:text="@string/forgot_password"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size_body_small" />
+
+        <View
+            android:id="@+id/stroke"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_stroke_height"
+            android:layout_marginTop="@dimen/auth_stroke_margin_top"
+            android:background="@color/color_stroke"/>
+        
+        <LinearLayout
+            android:id="@+id/auth_other_methods"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_other_auth_methods_height"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/auth_other_auth_methods_margin_top">
+
+            <FrameLayout
+                android:id="@+id/container_vk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/background_vk"
+                android:layout_marginEnd="@dimen/auth_other_auth_methods_margin">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_auth_other_methods_size"
+                    android:layout_height="@dimen/icon_auth_other_methods_size"
+                    android:src="@drawable/icon_vk"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/container_ok"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/background_ok"
+                android:layout_marginStart="@dimen/auth_other_auth_methods_margin">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_auth_other_methods_size"
+                    android:layout_height="@dimen/icon_auth_other_methods_size"
+                    android:src="@drawable/icon_ok"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

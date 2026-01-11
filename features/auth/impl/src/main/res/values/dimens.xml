@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="auth_input_margin_top">16dp</dimen>
+
+    <dimen name="auth_email_text_field_margin_top">8dp</dimen>
+
+    <dimen name="auth_account_login_height">@dimen/text_field_height</dimen>
+    <dimen name="auth_account_login_margin_top">28dp</dimen>
+
+    <dimen name="auth_no_account_margin_top">14dp</dimen>
+    <dimen name="auth_forgot_password_margin_top">8dp</dimen>
+
+    <dimen name="auth_stroke_margin_top">28dp</dimen>
+    <dimen name="auth_stroke_height">1dp</dimen>
+
+    <dimen name="auth_other_auth_methods_margin_top">28dp</dimen>
+    <dimen name="auth_other_auth_methods_height">@dimen/text_field_height</dimen>
+    <dimen name="auth_other_auth_methods_margin">8dp</dimen>
+
+</resources>

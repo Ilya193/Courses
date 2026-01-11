@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guideline" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_courses_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/courses_search_courses_margin_top"
+        android:layout_marginEnd="@dimen/courses_search_courses_margin_end"
+        android:background="@android:color/transparent"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@id/background_icon_filter"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/icon_search"
+        app:startIconTint="@color/default_white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/courses_background_search_courses"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/search_courses"
+            android:textColorHint="@color/text_color_hint"
+            android:textSize="@dimen/text_size_body_medium" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/background_icon_filter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/courses_background_icon_filter"
+        app:layout_constraintBottom_toBottomOf="@id/search_courses_layout"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintTop_toTopOf="@id/search_courses_layout" />
+
+    <ImageView
+        android:id="@+id/icon_filter"
+        android:layout_width="@dimen/courses_icon_filter_size"
+        android:layout_height="@dimen/courses_icon_filter_size"
+        android:src="@drawable/icon_filter"
+        app:layout_constraintBottom_toBottomOf="@id/background_icon_filter"
+        app:layout_constraintEnd_toEndOf="@id/background_icon_filter"
+        app:layout_constraintStart_toStartOf="@id/background_icon_filter"
+        app:layout_constraintTop_toTopOf="@id/background_icon_filter" />
+
+    <LinearLayout
+        android:id="@+id/container_sorted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/courses_container_sorted_margin_top"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintTop_toBottomOf="@id/search_courses_layout">
+
+        <TextView
+            android:id="@+id/sorted_by_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/courses_sorted_by_margin_end"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/sorted_by_date"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size_body_medium" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/icon_size_medium"
+            android:layout_height="@dimen/icon_size_medium"
+            android:src="@drawable/icon_sorted"
+            app:tint="@color/green" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_of_courses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/courses_list_of_courses_margin_top"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/container_sorted"
+        tools:listitem="@layout/item_course_content" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="search_courses_layout, background_icon_filter,
+        icon_filter, container_sorted, list_of_courses" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
