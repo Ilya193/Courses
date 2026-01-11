@@ -4,7 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.ikom.core.courses_logic.courses_domain.CoursesRepository
+import ru.ikom.core.courses_logic.courses_domain.use_cases.GetAllCoursesBySortPublishDateUseCase
+import ru.ikom.core.courses_logic.courses_domain.use_cases.GetAllCoursesUseCase
 import ru.ikom.feature.courses.api.CoursesFeature
 import ru.ikom.feature.courses.impl.di.CoursesContainer
 import ru.ikom.feature.courses.impl.presentation.component.mappers.CourseMapper
@@ -14,16 +15,18 @@ import ru.ikom.ui.components.BaseRootComponent
 class CoursesComponent(
     private val feature: CoursesFeature,
     private val deps: CoursesDependencies,
-    private val coursesContainer: CoursesContainer = CoursesContainer(),
-    private val coursesRepository: CoursesRepository = deps.coursesRepository,
-    private val courseMapper: CourseMapper = coursesContainer.courseMapper
+    private val container: CoursesContainer = CoursesContainer(),
+    private val getAllCoursesUseCase: GetAllCoursesUseCase = deps.getAllCoursesUseCase,
+    private val getAllCoursesBySortPublishDateUseCase: GetAllCoursesBySortPublishDateUseCase =
+        deps.getAllCoursesBySortPublishDateUseCase,
+    private val courseMapper: CourseMapper = container.courseMapper
 ) : BaseRootComponent<CoursesComponent.State, CoursesComponent.Msg, Unit>(initialState()) {
 
     init {
         viewModelScope.launch {
             dispatch(Msg.UpdateLoading(isLoading = true))
 
-            coursesRepository.getCourses()
+            getAllCoursesUseCase()
                 .onSuccess {
                     val finalCourses = it.map(courseMapper::mapToUi)
 
@@ -36,12 +39,13 @@ class CoursesComponent(
     }
 
     fun onClickSorted() {
-        val state = uiState.value
-        val courses = state.courses
-
-        val finalCourses = courses.sortedByDescending { it.publishDate }
-
-        dispatch(Msg.UpdateCourses(finalCourses))
+        viewModelScope.launch {
+            getAllCoursesBySortPublishDateUseCase()
+                .onSuccess {
+                    val finalCourses = it.map(courseMapper::mapToUi)
+                    dispatch(Msg.UpdateCourses(finalCourses))
+                }
+        }
     }
 
     override fun State.reduce(msg: Msg): State =

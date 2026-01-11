@@ -1,14 +1,19 @@
 package ru.ikom.feature.courses.impl.presentation.component
 
-import ru.ikom.core.courses_logic.courses_domain.CoursesRepository
+import ru.ikom.core.courses_logic.courses_domain.use_cases.GetAllCoursesBySortPublishDateUseCase
+import ru.ikom.core.courses_logic.courses_domain.use_cases.GetAllCoursesUseCase
 
 interface CoursesDependencies {
-    val coursesRepository: CoursesRepository
+    val getAllCoursesUseCase: GetAllCoursesUseCase
+    val getAllCoursesBySortPublishDateUseCase: GetAllCoursesBySortPublishDateUseCase
 }
 
 fun CoursesDependencies(
-    coursesRepository: CoursesRepository
+    getAllCoursesUseCase: GetAllCoursesUseCase,
+    getAllCoursesBySortPublishDateUseCase: GetAllCoursesBySortPublishDateUseCase
 ) =
     object : CoursesDependencies {
-        override val coursesRepository: CoursesRepository = coursesRepository
+        override val getAllCoursesUseCase: GetAllCoursesUseCase = getAllCoursesUseCase
+        override val getAllCoursesBySortPublishDateUseCase: GetAllCoursesBySortPublishDateUseCase =
+            getAllCoursesBySortPublishDateUseCase
     }

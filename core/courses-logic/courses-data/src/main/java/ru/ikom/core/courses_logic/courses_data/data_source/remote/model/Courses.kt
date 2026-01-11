@@ -1,4 +1,4 @@
-package ru.ikom.core.courses_logic.courses_data.data_source.model
+package ru.ikom.core.courses_logic.courses_data.data_source.remote.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

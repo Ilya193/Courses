@@ -2,7 +2,6 @@ package ru.ikom.courses.di
 
 import ru.ikom.core.common.platform.AppDispatchers
 import ru.ikom.core.courses_logic.courses_data.di.CoursesLogicModule
-import ru.ikom.core.courses_logic.courses_domain.CoursesRepository
 import ru.ikom.core.network.CoreNetworkModule
 import ru.ikom.courses.di.platform.AndroidAppDispatchers
 
@@ -12,7 +11,7 @@ interface CoreModule {
 
     val coreNetworkModule: CoreNetworkModule
 
-    val coursesRepository: CoursesRepository
+    val coursesLogicModule: CoursesLogicModule
 }
 
 class DefaultCoreModule : CoreModule {
@@ -25,13 +24,11 @@ class DefaultCoreModule : CoreModule {
         CoreNetworkModule()
     }
 
-    private val coursesLogicModule by lazy {
+    override val coursesLogicModule by lazy {
         CoursesLogicModule(
             retrofit = coreNetworkModule.retrofit,
             appDispatchers = appDispatchers
         )
     }
 
-    override val coursesRepository: CoursesRepository
-        get() = coursesLogicModule.coursesRepository
 }

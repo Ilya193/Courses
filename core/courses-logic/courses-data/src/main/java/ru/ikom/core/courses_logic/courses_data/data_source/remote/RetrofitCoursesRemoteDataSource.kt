@@ -1,8 +1,8 @@
-package ru.ikom.core.courses_logic.courses_data.data_source
+package ru.ikom.core.courses_logic.courses_data.data_source.remote
 
 import retrofit2.Retrofit
 import retrofit2.http.GET
-import ru.ikom.core.courses_logic.courses_data.data_source.model.Courses
+import ru.ikom.core.courses_logic.courses_data.data_source.remote.model.Courses
 
 class RetrofitCoursesRemoteDataSource(
     private val retrofit: Retrofit
